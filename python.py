@@ -22,7 +22,8 @@ for e in element:
     if '/jobs/view/' in str(e.get_attribute('href')):
         validJobs.append(e.get_attribute('href'))
 
+#test function to print the links. Cindy u can use this loop to traverse 
 for i in validJobs:
     i = 0
-    jobs[i] = validJobs[i])
+    print(validJobs[i])
     i = i + 1
