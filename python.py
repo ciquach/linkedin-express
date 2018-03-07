@@ -9,7 +9,7 @@ email = input('What’s your email?')
 phone = input('What is your phone number?')
 title = input('What kind of job are you looking for?')
 title.replace(' ', '%20')
-# a very important change
+
 page = driver.get('https://www.linkedin.com/jobs/search/?f_LF=f_AL&keywords={}&location=United%20States&locationId=us%3A0'.format(title))
 
 jobs = []
