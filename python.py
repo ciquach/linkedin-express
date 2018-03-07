@@ -3,9 +3,9 @@ from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Chrome()
 
-# name = input('What’s your name?')
-# email = input('What’s your email?')
-# phone = input('What is your phone number?')
+name = input('What’s your name?')
+email = input('What’s your email?')
+phone = input('What is your phone number?')
 title = input('What kind of job are you looking for?')
 title.replace(' ', '%20')
 
