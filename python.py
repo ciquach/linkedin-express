@@ -1,12 +1,11 @@
-import requests
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.FireFox()
+driver = webdriver.Chrome()
 
-name = input('What’s your name?')
-email = input('What’s your email?')
-phone = input('What is your phone number?')
+# name = input('What’s your name?')
+# email = input('What’s your email?')
+# phone = input('What is your phone number?')
 title = input('What kind of job are you looking for?')
 title.replace(' ', '%20')
 
@@ -14,39 +13,16 @@ page = driver.get('https://www.linkedin.com/jobs/search/?f_LF=f_AL&keywords={}&l
 
 jobs = []
 i = 0
-links = driver.find_element_by_css_selector('li>div>div>div>div>a')
-for link in links:
-    jobs[i] = 'https://www.linkedin.com' + link.get_attribute("href")
 
-# tests
-for jobs in jobs:
-    print(jobs.at(i))
+element = driver.find_elements_by_css_selector('a')
+validJobs = []
 
-#EMMA
-# jobs = []
-# i = 0
-# for idk in idk: #until there are no more jobs on the page
-#     elem = browser.find_element_by_data-contol-name('A_jobssearch_job_result_click')
-#     jobs[i] = elem
-#     i = i + 1
+for e in element:
+    # print(e.get_attribute('href'))
+    if '/jobs/view/' in str(e.get_attribute('href')):
+        validJobs.append(e.get_attribute('href'))
 
-#traverse above link for the links to jobs until no more jobs are on page
-#data_control_name heref thingy
-#push each link into an array, vector, or dictionary? file maybe?
-
-
-
-
-
-
-
-
-#CINDY
-#while the array, vec, whatever u chose to use is not empty
-#click the link
-# eg. checkout = browser.find_element_by_xpath('//*[@id="cart_checkout_button"]')
-#     checkout.click()
-#click easy apply button (button is not a link.. ask John)
-# fill info #VANESSA 
-# repeats for other links ...
-
+for i in validJobs:
+    i = 0
+    jobs[i] = validJobs[i])
+    i = i + 1
