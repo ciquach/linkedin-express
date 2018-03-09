@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome() #add driver path 'C:/Users/Cindy Quach/Desktop'
 
 name = input('What’s your name?')
 email = input('What’s your email?')
@@ -26,4 +26,13 @@ for e in element:
 for i in validJobs:
     i = 0
     print(validJobs[i])
+    i = i + 1
+
+for i in validJobs:
+    i=0
+    driver.find_element_by_link_text(validJobs[i]).click() 
+    driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + 't') 
+    driver.find_element_by_css_selector('div.button.jobs-s-apply_button.js-apply-button ').click()
+    addInput()
+    driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + 'w')
     i = i + 1
