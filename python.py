@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome() #add driver path 'C:/Users/Cindy Quach/Desktop'
 
 name = input('What’s your name?')
 email = input('What’s your email?')
@@ -19,7 +19,6 @@ element = driver.find_elements_by_css_selector('a')
 validJobs = []
 
 for e in element:
-    # print(e.get_attribute('href'))
     if '/jobs/view/' in str(e.get_attribute('href')):
         validJobs.append(e.get_attribute('href'))
 
